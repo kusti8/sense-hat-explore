@@ -13,4 +13,4 @@ while True:
     msg = "Temperature = %s, Pressure=%s, Humidity=%s" % (t,p,h)
     print t,p,h
 
-    sense.show_message(msg, scroll_speed=0.05)
+    sense.show_message(msg)
