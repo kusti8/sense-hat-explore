@@ -1,12 +1,14 @@
 from sense_hat import SenseHat
-from subprocess import call
+import subprocess
 
 sense = SenseHat()
 sense.clear()
 f = open('temp.log', 'w')
 while True:
     temp = sense.get_temperature()
-    cpu = call('''vcgencmd measure_temp | sed -e "s/temp=\(.*\)'C/\1/"''', shell=True)
+    process = subprocess.Popen('''vcgencmd measure_temp | sed -e "s/temp=\(.*\)'C/\1/"''', shell=True, stdout=subprocess.PIPE)
+    out, err = process.communicate()
+    cpu = out
     print temp, cpu
     delta = cpu-temp
     f.write(str(delta)+'\n')
