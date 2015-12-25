@@ -49,7 +49,7 @@ def check_win(x,y):
     global game_over
     if maze[y][x] == g:
         game_over = True
-        sense.show_message('You Win')
+        sense.show_message('You Win!')
 
 game_over = False
 
