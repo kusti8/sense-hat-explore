@@ -1,0 +1,3 @@
+#!/bin/bash
+PYTHONSTARTUP=$HOME/sense/PYTHONSTARTUP python3
+
