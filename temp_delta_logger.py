@@ -8,6 +8,7 @@ while True:
     temp = sense.get_temperature()
     process = subprocess.Popen('''vcgencmd measure_temp | sed -e "s/temp=\(.*\)'C/\1/"''', shell=True, stdout=subprocess.PIPE)
     out, err = process.communicate()
+    print out
     cpu = float(out)
     print temp, cpu
     delta = cpu-temp
