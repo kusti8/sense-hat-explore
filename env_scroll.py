@@ -5,7 +5,7 @@ while True:
     t = sense.get_temperature()
     p = sense.get_pressure()
     h = sense.get_humidity()
-    print t
+    print(t)
     t = 9.0/5.0*t+32
 
     t = round(t, 1)
