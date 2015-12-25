@@ -11,10 +11,8 @@ w = (255,255,255)
 x = 1
 y = 1
 
-game_over = False
-
 maze = [[r,r,r,r,r,r,r,r],
-        [r,b,b,b,b,b,r,r],
+        [r,b,b,b,b,b,b,r],
         [r,r,r,b,r,b,b,r],
         [r,b,r,b,r,r,r,r],
         [r,b,b,b,b,b,b,r],
@@ -22,17 +20,20 @@ maze = [[r,r,r,r,r,r,r,r],
         [r,b,b,r,b,b,b,r],
         [r,r,r,r,r,r,r,r]]
 
-sense.set_pixels(sum(maze,[]))
-
-
-def move_marble(pitch, roll, x, y):
+def move_marble(pitch,roll,x,y):
     new_x = x
     new_y = y
     if 1 < pitch < 179 and x != 0:
         new_x -= 1
-    elif 359 > pitch > 181 and x != 7:
+    elif 359 > pitch > 179 and x != 7 :
         new_x += 1
-    return new_x, new_y
+    if 1 < roll < 179 and y != 7:
+        new_y += 1
+    elif 359 > roll > 179 and y != 0 :
+        new_y -= 1
+    return new_x,new_y
+
+game_over = False
 
 while not game_over:
     pitch = sense.get_orientation()['pitch']
