@@ -12,7 +12,7 @@ while True:
     p = round(p, 1)
     h = round(h, 1)
 
-    msg = "Temperature = %s F, Pressure=%s mb, Humidity=%s %" % (t,p,h)
+    msg = "Temperature = %s F, Pressure=%s mb, Humidity=%s %%" % (t,p,h)
     print(t,p,h)
 
     sense.show_message(msg)
