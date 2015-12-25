@@ -13,5 +13,5 @@ maze = [[r,r,r,r,r,r,r,r],
         [r,b,r,r,r,r,b,r],
         [r,b,b,r,b,b,b,r],
         [r,r,r,r,r,r,r,r]]
-        
-snese.set_pixels(sum(maze,[]))
+
+sense.set_pixels(sum(maze,[]))
