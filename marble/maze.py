@@ -39,7 +39,7 @@ def check_wall(x,y,new_x,new_y):
         return new_x, new_y
     elif maze[new_y][x] != r:
         return x, new_y
-    elif maze[y][new_x] != r
+    elif maze[y][new_x] != r:
         return new_x, y
     return x,y
 
