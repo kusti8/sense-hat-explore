@@ -6,7 +6,7 @@ sense.clear()
 f = open('temp.log', 'w')
 while True:
     temp = sense.get_temperature()
-    cpu = call('vcgencmd get_temp', shell=True)
+    cpu = call('''vcgencmd measure_temp | sed -e "s/temp=\(.*\)'C/\1/"''', shell=True)
     delta = cpu-temp
     f.write(str(delta)+'\n')
     sense.show_message(str(round(delta,1)))
