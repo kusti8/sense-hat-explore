@@ -15,9 +15,10 @@ while True:
     temp = sense.get_temperature()
     process = subprocess.Popen(['vcgencmd', 'measure_temp'], stdout=subprocess.PIPE)
     out, err = process.communicate()
-    print out
+    #print out
     cpu = float(find_between(out, 'temp=', "'C"))
-    print temp, cpu
+    #print temp, cpu
     delta = cpu-temp
+    print delta
     f.write(str(delta)+'\n')
     sense.show_message(str(round(delta,1)))
